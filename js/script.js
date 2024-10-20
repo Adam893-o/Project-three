@@ -1,4 +1,4 @@
-function init(){
+function JupiterFunction(){
   var button = document.getElementById('entrybutton');
 
   function showMeText(){

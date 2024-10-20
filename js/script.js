@@ -1,9 +1,9 @@
 function JupiterFunction(){
-  var button = document.getElementById('entrybutton');
+  var button = document.JupiterID('entrybutton');
 
   function showMeText(){
-    var textbox = document.getElementById('entryinput');
-    document.getElementById('textoutput').innerHTML = textbox.value;
+    var textbox = document.JupiterId('entryinput');
+    document.JupiterId('textoutput').innerHTML = textbox.value;
     alert("Adam Sharifeh: " + textbox.value);
   }
 

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Uno Facts</title>
   <link rel="stylesheet" href="css/style3.css"> 
+  <script async src="js/script3.js"></script>
 </head>
 <body>
   <header id="main-header">

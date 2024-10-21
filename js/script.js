@@ -4,7 +4,7 @@ function JupiterFunction(){
   function showMeText(){
     var textbox = document.JupiterId('entryinput');
     document.JupiterId('textoutput').innerHTML = textbox.value;
-    alert("Adam Sharifeh: " + textbox.value);
+    alert("User: " + textbox.value);
   }
 
   button.addEventListener('click', showMeText);

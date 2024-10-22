@@ -3,8 +3,9 @@
 <head>
 	  <meta charset="utf-8">
 	  <title>Sample Map</title>
-		<meta name="viewport" content="initial-scale=1.o">
+		<meta name="viewport" content="initial-scale=1.0">
 		<link rel="stylesheet" href="style4.css">
+		<script async type="text/javascript" src="color_script.js"></script> 
 </head>
 <body>
 	<div id="map">
@@ -24,6 +25,9 @@ declare global {
   interface Window {
     initMap: () => void;
   }
+}
+window.initMap = initMap;
+  </script>
 }
 window.initMap = initMap;
   </script>

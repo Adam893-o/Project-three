@@ -1,13 +1,8 @@
-function JupiterFunction(){
-  var button = document.JupiterID('entrybutton');
+const {ColorScheme} = await google.maps.importLibrary("core")
 
-  function showMeText(){
-    var textbox = document.JupiterId('entryinput');
-    document.JupiterId('textoutput').innerHTML = textbox.value;
-    alert("User: " + textbox.value);
-  }
-
-  button.addEventListener('click', showMeText);
-  }
-  
-window.addEventListener('load', init);
+const mapOptions = {
+  center: { lat: -34.397, lng: 150.644 },
+  zoom: 8,
+  colorScheme: ColorScheme.DARK,
+}
+map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);

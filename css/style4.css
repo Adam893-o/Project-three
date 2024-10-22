@@ -1,1 +1,14 @@
-
+wrapper {
+		  width: 100px;
+		  height: 100px;
+		  background-color: blue;
+		  margin: 10px;
+		  color #fff;
+}
+		
+canvas {
+	width: 560px;
+	background-color: green;
+	margin: 30px auto;
+	height: 400px;
+}

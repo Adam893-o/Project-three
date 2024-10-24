@@ -1,13 +1,17 @@
-function init(){
-  var button = document.getElementById('entrybutton');
-
-  function showMeText(){
-    var textbox = document.getElementById('entryinput');
-    document.getElementById('textoutput').innerHTML = textbox.value;
-    alert("Adam Sharifeh: " + textbox.value);
+function Slider(slider){
+  if (!(slider instanceof Element)) {
+    throw new Error ('No slider passed in');
   }
 
-  button.addEventListener('click', showMeText);
-  }
+  let current;
+  let prev;
+  let next;
+
+  const slides = slider.querySelectorAll('.slides')
+  const prevButton = document.querySelector('.goPrev');
+  const nextButton = document.querySelector('.goNext')
   
-window.addEventListener('load', init);
+function startSlider() {
+  current =
+}
+}

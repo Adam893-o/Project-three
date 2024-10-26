@@ -1,14 +1,11 @@
-wrapper {
-		  width: 100px;
-		  height: 100px;
-		  background-color: blue;
-		  margin: 10px;
-		  color #fff;
+#map {
+  height: 100%;
 }
-		
-canvas {
-	width: 560px;
-	background-color: green;
-	margin: 30px auto;
-	height: 400px;
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

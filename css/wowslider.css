@@ -1,0 +1,38 @@
+#wowslider-container1 {
+  position: relative;
+  width: 640px;
+  height: 360px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.ws_images {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ws_images li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.ws_images li img {
+  width: 100%;
+  height: auto;
+}
+
+.ws_images li.active {
+  opacity: 1;
+}
+
+/* Optional shadow styling */
+.ws_shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

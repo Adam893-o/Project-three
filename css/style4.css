@@ -1,16 +1,7 @@
-body {
-  background-image: url('../media/green.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  margin: 8px;
-  padding: 0;
+html, body {
   height: 100%;
-  font-family: Arial, sans-serif;
 }
 
-
 #map {
-  height: 100%;
+  height: 50%; 
 }

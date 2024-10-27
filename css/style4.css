@@ -1,7 +1,11 @@
-html, body {
-  height: 100%;
+wrapper {
+  width: 700px;
+  height: 500px;
+  background-color: green;
+  overflow: hidden;
 }
 
 #map {
-  height: 50%; 
+  height: 700px; 
+  width: 100%;
 }

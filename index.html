@@ -1,35 +1,54 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Simple Map</title>
-
+    <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="./style4.css" />
-    <script type="module" src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/wowslider.css" />
+  
+    <script src="js/wowslider.js"></script>
+    <script type="module" src="./script.js"></script> 
   </head>
   <body>
     <div id="map"></div>
 
-   
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+    
+    <script>
+      (g => {
+        var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+          await (a = m.createElement("script"));
+          e.set("libraries", [...r] + "");
+          for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+          e.set("callback", c + ".maps." + q);
+          a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+          d[q] = f;
+          a.onerror = () => h = n(Error(p + " could not load."));
+          a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+          m.head.append(a);
+        }));
+        d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+      })({
+        key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", 
+        v: "weekly"
+      });
+    </script>
 
-  <link rel="stylesheet" type="text/css" href="css/wowslider.css" />
-<script type="text/javascript" src="js/wowslider.js"></script>
+    <div id="wowslider-container1">
+      <div class="ws_images">
+        <ul>
+          <li><img src="media/image1.jpg" alt="" title="An image of Jupiter up close" id=""/></li>
+          <li><img src="media/image2.jpg" alt="" title="Marks of Jupiter after hitting asteroids" id=""/></li>
+          <li><img src="media/image3.jpg" alt="" title="Jupiter's size compared to other planets" id=""/></li>
+          <li><img src="media/image4.jpg" alt="" title="Uno's History" id=""/></li>
+          <li><img src="media/image5.jpg" alt="" title="Merle Robbins the creator of UNO" id=""/></li>
+          <li><img src="media/image6.png" alt="" title="Uno compared to different countries " id=""/></li>
+          <li><img src="media/image7.jpg" alt="" title="Other characters in UNO" id=""/></li>
+          <li><img src="media/image8.png" alt="" title="New Uno rules over the years" id=""/></li>
+        </ul>
+      </div>
+      <div class="ws_shadow"></div>
+    </div>
 
-<div id="wowslider-container1">
-  <div class="ws_images">
-    <ul>
-      <li><img src="media/image1.jpg" alt="" title="" id=""/></li>
-      <li><img src="media/image2.jpg" alt="" title="" id=""/></li>
-      <li><img src="media/image3.jpg" alt="" title="" id=""/></li>
-      <li><img src="media/image4.jpg" alt="" title="" id=""/></li>
-      <li><img src="media/image5.jpg" alt="" title="" id=""/></li>
-      <li><img src="media/image6.png" alt="" title="" id=""/></li>
-      <li><img src="media/image7.jpg" alt="" title="" id=""/></li>
-      <li><img src="media/image8.png" alt="" title="" id=""/></li>
-    </ul>
-  </div>
-  <div class="ws_shadow"></div>
-</div>
-
-</body>
+  </body>
 </html>

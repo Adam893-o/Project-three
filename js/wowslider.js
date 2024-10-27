@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
     if (window.WOWSlider) {
-        var slider = new wowslider({
+        var slider = new WOWSlider({
             container: 'wowslider-container1', 
             width: 640, 
             height: 360, 
@@ -10,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         slider.init();
     } else {
-        console.error('wowslider library not found');
+        console.error('WOWSlider library not found');
     }
 });

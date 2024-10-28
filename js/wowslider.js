@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         slider.init();
     } else {
-        console.error('WOWSlider library not found');
+        console.error('wowslider library not found');
     }
 });

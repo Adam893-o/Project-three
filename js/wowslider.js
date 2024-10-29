@@ -12,3 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('wowslider library not found');
     }
 });
+
+
+<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/wowslider.css">
+  <script async src="js/script.js"></script>
+  <script async src="js/wowslider.js"></script>
+
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+  type="text/javascript">
+  </script>

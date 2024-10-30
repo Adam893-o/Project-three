@@ -1,1 +1,44 @@
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif; 
+    line-height: 1.5;
+    color: #333;
+}
+
+img {
+  height: auto;
+  border: solid 4px #ff0000;
+}
+picture,
+video,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul, li {
+    list-style: none;
+    color: #07ffe4;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

@@ -1,76 +1,48 @@
 async function initMap() {
+  // Load the required Google Maps libraries
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  // Set the map's initial position and options
   const myLatlng = { lat: -25.363, lng: 131.044 };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: myLatlng,
-    mapId: "MY MAP",
-  });
-  const marker = new google.maps.marker.AdvancedMarkerElement({
-    position: myLatlng,
-    map,
-    title: "Click to zoom",
+    mapId: "YOUR_MAP_ID", // Replace with your actual map ID if you have one, or remove this line if unnecessary
   });
 
+  // Marker and InfoWindow content
+  const contentString =
+    '<div id="content">' +
+    '<h1>Uluru (Ayers Rock)</h1>' +
+    "<p><b>Uluru</b>, also referred to as Ayers Rock, is a large sandstone rock formation in the southern part of the Northern Territory, central Australia.</p>" +
+    '<p><a href="https://en.wikipedia.org/wiki/Uluru">Learn more on Wikipedia</a></p>' +
+    "</div>";
+
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    ariaLabel: "Uluru",
+  });
+
+  // Set up the marker
+  const marker = new google.maps.Marker({
+    position: myLatlng,
+    map,
+    title: "Uluru (Ayers Rock)",
+  });
+
+  // Open info window on marker click
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+  });
+
+  // Additional map functionality
   map.addListener("center_changed", () => {
     window.setTimeout(() => {
       map.panTo(marker.position);
     }, 3000);
   });
-  marker.addListener("click", () => {
-    map.setZoom(8);
-    map.setCenter(marker.position);
-  });
 }
 
-function initMap() {
-  const uluru = { lat: -25.363, lng: 131.044 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
-  });
-  const contentString =
-    '<div id="content">' +
-    '<div id="siteNotice">' +
-    "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-    '<div id="bodyContent">' +
-    "<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
-    "sandstone rock formation in the southern part of the " +
-    "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
-    "south west of the nearest large town, Alice Springs; 450&#160;km " +
-    "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
-    "features of the Uluru - Kata Tjuta National Park. Uluru is " +
-    "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
-    "Aboriginal people of the area. It has many springs, waterholes, " +
-    "rock caves and ancient paintings. Uluru is listed as a World " +
-    "Heritage Site.</p>" +
-    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
-    "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
-    "(last visited June 22, 2009).</p>" +
-    "</div>" +
-    "</div>";
-  const infowindow = new google.maps.InfoWindow({
-    content: contentString,
-    ariaLabel: "Uluru",
-  });
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map,
-    title: "Uluru (Ayers Rock)",
-  });
-
-  marker.addListener("click", () => {
-    infowindow.open({
-      anchor: marker,
-      map,
-    });
-  });
-}
-
-initMap();
-
-let marker;
-
+// Call the function to initialize the map
 window.initMap = initMap;

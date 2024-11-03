@@ -8,20 +8,7 @@ async function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: myLatlng,
-    mapId: "YOUR_MAP_ID", // Replace with your actual map ID if you have one, or remove this line if unnecessary
-  });
-
-  // Marker and InfoWindow content
-  const contentString =
-    '<div id="content">' +
-    '<h1>Uluru (Ayers Rock)</h1>' +
-    "<p><b>Uluru</b>, also referred to as Ayers Rock, is a large sandstone rock formation in the southern part of the Northern Territory, central Australia.</p>" +
-    '<p><a href="https://en.wikipedia.org/wiki/Uluru">Learn more on Wikipedia</a></p>' +
-    "</div>";
-
-  const infowindow = new google.maps.InfoWindow({
-    content: contentString,
-    ariaLabel: "Uluru",
+    mapId: "4504f8b37365c3d0",
   });
 
   // Set up the marker

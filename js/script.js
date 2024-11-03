@@ -1,3 +1,10 @@
+$(document).ready(function(){
+  $('.boxslider').bxSlider({
+    mode: 'fade',
+    slideWidth: 600,
+    captions: true,
+  });
+});
 async function initMap() {
   // Load the required Google Maps libraries
   const { Map } = await google.maps.importLibrary("maps");

@@ -1,11 +1,14 @@
-$(document).ready(function(){
-  $('.boxslider').bxSlider({
-    mode: 'fade',
-    slideWidth: 600,
-    captions: true,
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 40.76, lng: -73.983 },
+    zoom: 15,
+    mapTypeId: "satellite",
   });
-});
-async function initMap() {
+
+  map.setTilt(45);
+}
+
+{
   // Load the required Google Maps libraries
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -19,10 +22,15 @@ async function initMap() {
   });
 
   // Set up the marker
+  const contentstring '<h1>About Six Flags</h1> <p>Come on in and enjoy the amazing rides that six flags presents and have a blast with your friends and family.</p>'
+  const infowindowSixFlags = new google.maps.InfoWindow({
+    content: contentString,
+    ariaLabel: "SixFlags",
+  });
   const marker = new google.maps.Marker({
     position: myLatlng,
     map,
-    title: "Uluru (Ayers Rock)",
+    title: "Six Flags",
   });
 
   // Open info window on marker click

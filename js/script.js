@@ -22,7 +22,7 @@ function initMap() {
   });
 
   // Set up the marker
-  const contentstring '<h1>About Six Flags</h1> <p>Come on in and enjoy the amazing rides that six flags presents and have a blast with your friends and family.</p>'
+  const contentstring '<h1>About Six Flags</h1><p>Come on in and enjoy the amazing rides that six flags presents and have a blast with your friends and family.</p>'
   const infowindowSixFlags = new google.maps.InfoWindow({
     content: contentString,
     ariaLabel: "SixFlags",

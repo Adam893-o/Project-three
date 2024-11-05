@@ -40,5 +40,16 @@ function initMap() {
   });
 }
 
+// Handle Geolocation errors
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: Current Location Cannot Be Found."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
+}
+
 // Assign the initMap function to window to make it globally accessible
 window.initMap = initMap;

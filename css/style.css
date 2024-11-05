@@ -384,3 +384,19 @@ strong {
   color: yellow;
   font-weight: bold;
 }
+
+.slideshow {
+  max-width:600px;
+  margin: 0px;
+}
+
+.slideshow ul li {
+  text-align: center;
+}
+
+.bxslider {
+  width: 500px;
+  height: 600px;
+  display: block;
+}
+  

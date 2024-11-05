@@ -178,3 +178,8 @@ ul.bxslider {
   padding: 10px;
 }
 
+#map {
+  height: 400px;
+  width: 100%;
+}
+

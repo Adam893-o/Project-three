@@ -1,61 +1,44 @@
 function initMap() {
+  // Initialize map with center and zoom level
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: IIT {lat: 41.831299, lng: -87.627274 };
+    center: { lat: 41.831299, lng: -87.627274 }, // Correct object syntax
     zoom: 15,
     mapTypeId: "satellite",
-    });
-
-  map.setTilt(45);
-});
-
-{
-  // Load the required Google Maps libraries
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
-  // Set the map's initial position and options
-  const myLatlng = {lat: 41.831299, lng: -87.627274 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: myLatlng,
-    mapId: "4504f8b37365c3d0",
   });
 
-  // Set up the marker
-  const contentstring '<h1>Illinois institute of technology</h1><p>IIT is a private university that is famous for its architecture major as well as majoring in technology.</p>'
-  const infowindowSixFlags = new google.maps.InfoWindow({
+  map.setTilt(45); // Set tilt for the map view
+
+  // Define marker position
+  const iitLocation = { lat: 41.831299, lng: -87.627274 };
+
+  // Set up a marker on IIT's location
+  const marker = new google.maps.Marker({
+    position: iitLocation,
+    map: map,
+    title: "Illinois Institute of Technology",
+  });
+
+  // Define content for the info window
+  const contentString = `<h1>Illinois Institute of Technology</h1>
+    <p>IIT is a private university known for its architecture and technology programs.</p>`;
+
+  // Set up info window with content
+  const infowindow = new google.maps.InfoWindow({
     content: contentString,
-    ariaLabel: "IIT",
-  });
-   const marker = new AdvancedMarkerElement({
-      map,
-      position: {lat: 41.831299, lng: -87.627274 };
   });
 
-  const bermudaTriangle = new google.maps.Polygon({
-    paths: triangleCoords,
-    strokeColor: "#FF0000",
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: "#FF0000",
-    fillOpacity: 0.35,
-  });
-
-  bermudaTriangle.setMap(map);
-}
-
-  // Open info window on marker click
+  // Open info window when marker is clicked
   marker.addListener("click", () => {
     infowindow.open(map, marker);
   });
 
-  // Additional map functionality
+  // Center map on marker after a change
   map.addListener("center_changed", () => {
     window.setTimeout(() => {
-      map.panTo(marker.position);
+      map.panTo(marker.getPosition());
     }, 3000);
   });
 }
 
-// Call the function to initialize the map
+// Assign the initMap function to window to make it globally accessible
 window.initMap = initMap;

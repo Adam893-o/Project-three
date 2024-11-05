@@ -1,12 +1,12 @@
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 40.76, lng: -73.983 },
+    center: IIT {lat: 41.831299, lng: -87.627274 };
     zoom: 15,
     mapTypeId: "satellite",
-  });
+    });
 
   map.setTilt(45);
-}
+});
 
 {
   // Load the required Google Maps libraries
@@ -14,7 +14,7 @@ function initMap() {
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
   // Set the map's initial position and options
-  const myLatlng = { lat: -25.363, lng: 131.044 };
+  const myLatlng = {lat: 41.831299, lng: -87.627274 };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
     center: myLatlng,
@@ -22,16 +22,27 @@ function initMap() {
   });
 
   // Set up the marker
-  const contentstring '<h1>About Six Flags</h1><p>Come on in and enjoy the amazing rides that six flags presents and have a blast with your friends and family.</p>'
+  const contentstring '<h1>Illinois institute of technology</h1><p>IIT is a private university that is famous for its architecture major as well as majoring in technology.</p>'
   const infowindowSixFlags = new google.maps.InfoWindow({
     content: contentString,
-    ariaLabel: "SixFlags",
+    ariaLabel: "IIT",
   });
-  const marker = new google.maps.Marker({
-    position: myLatlng,
-    map,
-    title: "Six Flags",
+   const marker = new AdvancedMarkerElement({
+      map,
+      position: {lat: 41.831299, lng: -87.627274 };
   });
+
+  const bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+  });
+
+  bermudaTriangle.setMap(map);
+}
 
   // Open info window on marker click
   marker.addListener("click", () => {

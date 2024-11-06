@@ -1,15 +1,12 @@
+let map, infoWindow;
+
 function init(){
-	//alert('it works');
-	var el = document.getElementById('canvas');
-	var myLocation = new google.maps.LatLng(41.835117, -87.627130);
-	var mapOptions = {
-		center: myLocation,
-		zoom: 25,
-		mapTypeId: google.maps.MapTypeId.SATELLITE,
-		mapTypeControlOptions: {
-		position: google.maps.ControlPosition.BOTTOM_CENTER
-		}
-	};
+  var el = document.getElementById('canvas');
+  var myLocation = new google.maps.LatLng(41.835117, -87.627130);
+  var mapOptions = {
+	center: myLocation,
+	zoom: 25,
+};
 
 
   map.setTilt(45); // Set tilt for the map view
@@ -25,7 +22,9 @@ function init(){
   });
 
   // Define content for the info window
-  const contentString = `<h1>Illinois Institute of Technology</h1>
+  const contentString = 
+    <div style='color black'> </div>
+    `<h1>Illinois Institute of Technology</h1>
     <p>IIT is a private university known for its architecture and technology programs.</p>`;
 
   // Set up info window with content
@@ -45,6 +44,20 @@ function init(){
     }, 3000);
   });
 }
+
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 5,
+    center: { lat: 24.886, lng: -70.268 },
+    mapTypeId: "terrain",
+  });
+  // Define the LatLng coordinates for the polygon's path.
+  const triangleCoords = [
+    { lat: 25.774, lng: -80.19 },
+    { lat: 18.466, lng: -66.118 },
+    { lat: 32.321, lng: -64.757 },
+    { lat: 25.774, lng: -80.19 },
+  ];
 
  const bermudaTriangle = new google.maps.Polygon({
     paths: triangleCoords,

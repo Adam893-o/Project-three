@@ -46,6 +46,32 @@ function init(){
   });
 }
 
+ const bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+  });
+
+  bermudaTriangle.setMap(map);
+}
+
+  // Open info window on marker click
+  marker.addListener("click", () => {
+    infowindow.open(map, marker);
+  });
+
+  // Additional map functionality
+  map.addListener("center_changed", () => {
+    window.setTimeout(() => {
+      map.panTo(marker.position);
+    }, 3000);
+  });
+}
+
+
 // Handle Geolocation errors
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);

@@ -1,10 +1,16 @@
-function initMap() {
-  // Initialize map with center and zoom level
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 41.831299, lng: -87.627274 }, // Correct object syntax
-    zoom: 15,
-    mapTypeId: "satellite",
-  });
+function init(){
+	//alert('it works');
+	var el = document.getElementById('canvas');
+	var myLocation = new google.maps.LatLng(41.835117, -87.627130);
+	var mapOptions = {
+		center: myLocation,
+		zoom: 25,
+		mapTypeId: google.maps.MapTypeId.SATELLITE,
+		mapTypeControlOptions: {
+		position: google.maps.ControlPosition.BOTTOM_CENTER
+		}
+	};
+
 
   map.setTilt(45); // Set tilt for the map view
 

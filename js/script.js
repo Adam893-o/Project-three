@@ -2,7 +2,7 @@ let map, infoWindow;
 
 function initMap() {
   // Initialize the map with terrain settings and a polygon
-  map = new google.maps.Map(document.getElementById("wrapper"), {
+  map = new google.maps.Map(document.getElementById("canvas"), {
     zoom: 5,
     center: { lat: 24.886, lng: -70.268 },
     mapTypeId: "terrain",
@@ -83,7 +83,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setContent(
     browserHasGeolocation
       ? "Error: Current Location Cannot Be Found."
-      : "Error: Your browser doesn't support geolocation."
   );
   infoWindow.open(map);
 }

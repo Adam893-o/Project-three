@@ -83,6 +83,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setContent(
     browserHasGeolocation
       ? "Error: Current Location Cannot Be Found."
+      : "Error: Your browser doesn't support geolocation."
   );
   infoWindow.open(map);
 }

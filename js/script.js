@@ -2,13 +2,13 @@ let map, infoWindow;
 
 function initMap() {
   // Initialize the map with terrain settings and a polygon
-  map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("canvas"), {
     zoom: 5,
     center: { lat: 24.886, lng: -70.268 },
     mapTypeId: "terrain",
   });
 
-  // Define the coordinates for the Bermuda Triangle polygon
+  
   const triangleCoords = [
     { lat: 25.774, lng: -80.19 },
     { lat: 18.466, lng: -66.118 },
@@ -27,10 +27,10 @@ function initMap() {
 
   bermudaTriangle.setMap(map);
   
-  // Initialize info window for error handling in geolocation
+  
   infoWindow = new google.maps.InfoWindow();
   
-  // Use the init function to load additional markers or bxSlider functionality
+  
   init();
 }
 
@@ -57,15 +57,14 @@ function init() {
     <div style="color: black;">
       <h1>Illinois Institute of Technology</h1>
       <p>IIT is a private university known for its architecture and technology programs.</p>
-    </div>
-  `;
+    </div>`;
 
-  // Set up the info window with the content
+
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
   });
 
-  // Open info window on marker click
+  
   marker.addListener("click", () => {
     infowindow.open(map, marker);
   });

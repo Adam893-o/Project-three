@@ -8,7 +8,6 @@ function initMap() {
     mapTypeId: "terrain",
   });
 
-  
   const triangleCoords = [
     { lat: 25.774, lng: -80.19 },
     { lat: 18.466, lng: -66.118 },
@@ -26,55 +25,64 @@ function initMap() {
   });
 
   bermudaTriangle.setMap(map);
-  
-  
+
   infoWindow = new google.maps.InfoWindow();
-  
-  
+
   init();
 }
 
 function init() {
-  const myLocation = new google.maps.LatLng(41.835117, -87.627130);
+  // Request geolocation
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const myLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
 
-  // Set up map options
-  map.setOptions({
-    center: myLocation,
-    zoom: 15,
-    tilt: 45,
-  });
+        map.setOptions({
+          center: myLocation,
+          zoom: 15,
+          tilt: 45,
+        });
 
-  // Define IIT location marker
-  const iitLocation = { lat: 41.831299, lng: -87.627274 };
-  const marker = new google.maps.Marker({
-    position: iitLocation,
-    map: map,
-    title: "Illinois Institute of Technology",
-  });
+        // Define IIT location marker
+        const iitLocation = { lat: 41.831299, lng: -87.627274 };
+        const marker = new google.maps.Marker({
+          position: iitLocation,
+          map: map,
+          title: "Illinois Institute of Technology",
+        });
 
-  // Define the content of the info window
-  const contentString = `
-    <div style="color: black;">
-      <h1>Illinois Institute of Technology</h1>
-      <p>IIT is a private university known for its architecture and technology programs.</p>
-    </div>`;
+        const contentString = `
+          <div style="color: black;">
+            <h1>Illinois Institute of Technology</h1>
+            <p>IIT is a private university known for its architecture and technology programs.</p>
+          </div>`;
 
+        const infowindow = new google.maps.InfoWindow({
+          content: contentString,
+        });
 
-  const infowindow = new google.maps.InfoWindow({
-    content: contentString,
-  });
+        marker.addListener("click", () => {
+          infowindow.open(map, marker);
+        });
 
-  
-  marker.addListener("click", () => {
-    infowindow.open(map, marker);
-  });
-
-  // Center the map on the marker after a map center change
-  map.addListener("center_changed", () => {
-    window.setTimeout(() => {
-      map.panTo(marker.getPosition());
-    }, 3000);
-  });
+        map.addListener("center_changed", () => {
+          window.setTimeout(() => {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        });
+      },
+      (error) => {
+        handleLocationError(true, infoWindow, map.getCenter());
+      }
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
 }
 
 // Handle Geolocation errors
@@ -88,5 +96,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-// Assign the initMap function to window to make it globally accessible
 window.initMap = initMap;

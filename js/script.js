@@ -8,15 +8,15 @@ function initMap() {
     mapTypeId: "terrain",
   });
 
-  const triangleCoords = [
+  const squareCoords = [
     { lat: 25.774, lng: -80.19 },
     { lat: 18.466, lng: -66.118 },
     { lat: 32.321, lng: -64.757 },
     { lat: 25.774, lng: -80.19 },
   ];
 
-  const bermudaTriangle = new google.maps.Polygon({
-    paths: triangleCoords,
+  const bermudaSquare = new google.maps.Polygon({
+    paths: squareCoords,
     strokeColor: "#FF0000",
     strokeOpacity: 0.8,
     strokeWeight: 2,
@@ -24,7 +24,7 @@ function initMap() {
     fillOpacity: 0.35,
   });
 
-  bermudaTriangle.setMap(map);
+  bermudaSquare.setMap(map);
 
   infoWindow = new google.maps.InfoWindow();
 
@@ -53,6 +53,7 @@ function init() {
           position: iitLocation,
           map: map,
           title: "Illinois Institute of Technology",
+          icon: 'media/BugsBunny-icon.jpg'
         });
 
         const contentString = `

@@ -53,7 +53,7 @@ function init() {
           position: iitLocation,
           map: map,
           title: "Illinois Institute of Technology",
-          icon: 'media/BugsBunny-icon.jpg'
+          icon: 'media/BugsBunny-icon.png'
         });
 
         const contentString = `

@@ -4,20 +4,19 @@ function initMap() {
   // Initialize the map with terrain settings and a polygon
   map = new google.maps.Map(document.getElementById("canvas"), {
     zoom: 5,
-    center: {lat: 41.831299, lng: -87.627274};
+    center: { lat: 24.886, lng: -70.268 },
     mapTypeId: "terrain",
   });
 
-
-  const squareCoords = [
+  const triangleCoords = [
     { lat: 25.774, lng: -80.19 },
     { lat: 18.466, lng: -66.118 },
     { lat: 32.321, lng: -64.757 },
     { lat: 25.774, lng: -80.19 },
   ];
 
-  const bermudaSquare = new google.maps.Polygon({
-    paths: squareCoords,
+  const bermudaTriangle = new google.maps.Polygon({
+    paths: triangleCoords,
     strokeColor: "#FF0000",
     strokeOpacity: 0.8,
     strokeWeight: 2,
@@ -25,7 +24,7 @@ function initMap() {
     fillOpacity: 0.35,
   });
 
-  bermudaSquare.setMap(map);
+  bermudaTriangle.setMap(map);
 
   infoWindow = new google.maps.InfoWindow();
 
@@ -54,13 +53,12 @@ function init() {
           position: iitLocation,
           map: map,
           title: "Illinois Institute of Technology",
-          icon: './media/bugs-bunny-chuck-jones.png',
         });
 
         const contentString = `
           <div style="color: black;">
             <h1>Illinois Institute of Technology</h1>
-            <p>Ehh, what's up doc? This is IIT. A private university known for its amazing architecture major and other technology programs. I wish all IIT students a very pleasent experiance.</p>
+            <p>IIT is a private university known for its architecture and technology programs.</p>
           </div>`;
 
         const infowindow = new google.maps.InfoWindow({
@@ -87,6 +85,7 @@ function init() {
   }
 }
 
+// Handle Geolocation errors
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(

@@ -4,7 +4,7 @@ function initMap() {
   // Initialize the map with terrain settings and a polygon
   map = new google.maps.Map(document.getElementById("canvas"), {
     zoom: 5,
-    center: { lat: 24.886, lng: -70.268 },
+    center: {lat: 41.831299, lng: -87.627274},,
     mapTypeId: "terrain",
   });
 
@@ -54,7 +54,7 @@ function init() {
           position: iitLocation,
           map: map,
           title: "Illinois Institute of Technology",
-          icon: 'media/bugs-bunny-chuck-jones.png'
+          icon: './media/bugs-bunny-chuck-jones.png',
         });
 
         const contentString = `

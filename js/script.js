@@ -4,7 +4,7 @@ function initMap() {
   // Initialize the map with terrain settings and a polygon
   map = new google.maps.Map(document.getElementById("canvas"), {
     zoom: 5,
-    center: {lat: 41.831299, lng: -87.627274},,
+    center: {lat: 41.831299, lng: -87.627274},
     mapTypeId: "terrain",
   });
 

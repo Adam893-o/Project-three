@@ -53,7 +53,7 @@ function init() {
           position: iitLocation,
           map: map,
           title: "Illinois Institute of Technology",
-          icon: 'media/bugs-bunny-chuck-jones.png',
+          icon: 'media/bugs-bunny.png',
         });
 
         const contentString = `

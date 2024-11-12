@@ -8,14 +8,14 @@ function initMap() {
     mapTypeId: "terrain",
   });
 
-  const squareCoords = [
+  const triangleCoords = [
     { lat: 25.774, lng: -80.19 },
     { lat: 18.466, lng: -66.118 },
     { lat: 32.321, lng: -64.757 },
     { lat: 25.774, lng: -80.19 },
   ];
 
-  const bermudaSquare = new google.maps.Polygon({
+  const bermudaTriangle = new google.maps.Polygon({
     paths: triangleCoords,
     strokeColor: "#FF0000",
     strokeOpacity: 0.8,

@@ -59,7 +59,7 @@ function init() {
         const contentString = `
           <div style="color: black;">
             <h1>Illinois Institute of Technology</h1>
-            <p>Ehh, What's up doc? This is IIT, a private university known for its amazing architecture and other technology programs I wish all student that attend this university a pleasent experiance.</p>
+            <p>Ehh, What's up doc? This is IIT, a private university known for its amazing architecture and other technology programs I wish all students that attend this university a pleasent experiance.</p>
           </div>`;
 
         const infowindow = new google.maps.InfoWindow({

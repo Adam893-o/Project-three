@@ -413,3 +413,15 @@ strong {
   background-color: #CCC;
   margin: 30px auto;
 }
+
+@media (min-width: 800px) {
+  body {
+    bockgroundcolor: orange;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    backgroundcolor: blue;
+  }
+}
